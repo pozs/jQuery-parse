@@ -176,8 +176,8 @@ var autoload = [],
         
         return props;
     },
-    PARSER_TYPE     = 'urn:jquery:parser';
-    EVENTS_TYPE     = 'urn:jquery:parser:events';
+    PARSER_TYPE     = 'urn:jquery:parser',
+    EVENTS_TYPE     = 'urn:jquery:parser:events',
     PARSER_SELECTOR = '[itemscope][itemtype^="' + PARSER_TYPE +
                          ':"]:not([itemtype="' + EVENTS_TYPE + '"])',
     EVENTS_SELECTOR = '[itemscope][itemtype="' + EVENTS_TYPE + '"]';
