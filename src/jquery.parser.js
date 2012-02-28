@@ -1,5 +1,5 @@
 /*!
- * @fileOverview (in-load) parser plugin for jQuery
+ * @fileOverview parser plugin for jQuery
  * @author pozs <david.pozsar@gmail.com>
  * @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License
  */
