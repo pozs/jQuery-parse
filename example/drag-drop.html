@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Example for: (in-load) parser plugin for jQuery: button &amp; dialog</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/ui-lightness/jquery-ui.css" />
+    <script type="text/javascript" src="../src/jquery.parser.js"></script>
+    <style type="text/css">
+        #draggable, #droppable
+        {
+            float: left;
+            margin: 10px;
+            padding: 0.5em;
+        }
+        
+        #draggable
+        {
+            cursor: move;
+            width: 100px;
+            height: 100px;
+        }
+        
+        #droppable
+        {
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="draggable" class="ui-widget-content" itemscope="itemscope"
+         itemtype="urn:jquery:parser:draggable">
+        <p>Drag me to my target</p>
+    </div>
+    
+    <div id="droppable" class="ui-widget-header" itemscope="itemscope"
+         itemtype="urn:jquery:parser:droppable">
+        <p>Drop here</p>
+        <script type="text/x-javascript-method" itemprop="drop">
+            $( this ).addClass( "ui-state-highlight" ).
+                find( "p" ).html( "Dropped!" );
+        </script>
+    </div>
+</body>
+</html>
