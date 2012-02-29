@@ -6,6 +6,8 @@
 
 ;( function ( $, global, undefined ) {
 
+"use strict";
+
 var autoload = [],
     helper   = function ( $parent ) {
         var props = {};
@@ -202,18 +204,19 @@ $.extend( {
                 type    = $item.attr( "itemtype" ).
                             replace( new RegExp( "^" + PARSER_TYPE + ":" ), "" ).
                             replace( ":", "." ),
+                name    = type.replace( /^.*\./, "" ),
                 done    = false,
                 then    = function () {
-                    if ( ! done && $.isFunction( $item[type] ) ) {
+                    if ( ! done && $.isFunction( $item[name] ) ) {
                         done = true;
-                        $item[type]( getProps( $item ) );
+                        $item[name]( getProps( $item ) );
                         return true;
                     }
                     
                     return false;
                 };
             
-            if ( ! $.isFunction( $item[type] ) ) {
+            if ( ! $.isFunction( $item[name] ) ) {
                 prom = $.parser.autoload( type, then );
                 if ( prom ) {
                     if ( $.isFunction( prom.promise ) ) {
