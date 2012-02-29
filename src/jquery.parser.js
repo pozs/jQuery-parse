@@ -249,6 +249,7 @@ $.extend( {
         "displayName": "jQuery.parser",
         /**
          * @function
+         * @name autoload
          * @scope jQuery.parser
          * @param {String} plugin the missing plugin by name
          * <br />(return deferred when the load can complete async)
@@ -273,7 +274,7 @@ $.extend( {
             "displayName": "jQuery.parser.autoload",
             /**
              * @function
-             * @name autoload
+             * @name push
              * @scope jQuery.parser.autoload
              * @param {Function} adapter the additional load-adapter to add the end of the load-chain
              * @type {Function}
